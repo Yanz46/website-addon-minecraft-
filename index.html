@@ -1,121 +1,41 @@
 <!DOCTYPE html>
-<html>
-<meta charset='UTF-8'/><meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/><meta content='IE=edge' http-equiv='X-UA-Compatible'/>
-
-  <link rel="icon" type="image/svg+xml" href="https://feeldreams.github.io/main-icon.png"> 
-  <link rel="apple-touch-icon" href="https://feeldreams.github.io/main-icon.png">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
-  
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
-  <script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script><link href="https://feeldreams.github.io/maukahkamu/style.css" rel="stylesheet" type="text/css" />
-  <script src="https://unpkg.com/scrollreveal"></script>
-  
-<head>
-<title>Script HTML buat Kamu</title>
-</head>
-<body>
-	
-   <div class="overlay">
-     <!-- Teks Loading --><div class="loading-message">Hai kamu!<br>Tunggu dulu ya..</div>
-   </div>
-   
-   <!-- Ganti Audio di Sini, edit url di dalam src -->
-   <audio src="https://feeldreams.github.io/maukahkamu/seandainya.mp3" id="linkmp3" class="sembunyi"></audio>
-   
-   <!-- Pesan Pertama -->
-   <section class="first">
-       <!-- Background --><div class="wp"><img id="imgsatu" src="https://feeldreams.github.io/maukahkamu/wpsatu.jpg"/></div>
-       <!-- Stiker --><img id="first_stiker" class="stiker fade-in" src="https://feeldreams.github.io/bunga.gif"/>
-       
-       <h1 class="title">AKU ADA KATA KATA NIH</p>
-       <p class="slide-up">Percaya Diri
-1. "Anda adalah arsitek kesuksesan Anda sendiri."
-2. "Percayalah pada diri sendiri, maka Anda akan mencapai apa yang Anda inginkan."
-3. "Jadilah versi terbaik dari diri Anda."</p>
-  </section>
-  
-  <!-- Pesan Kedua -->
-  <section>
-      <!-- Background --><div class="wp"><img id="imgdua" src="https://feeldreams.github.io/maukahkamu/wpdua.jpg"/></div>
-      <!-- Stiker --><img class="stiker fade-in" src="https://feeldreams.github.io/pusn.gif"/>
-      
-      <h2 class="title">nih lagi</h2>
-      <p class="slide-right">Inspirasi Hidup
-1. "Hiduplah seolah-olah setiap hari adalah hari terakhir."
-2. "Tidak ada kata terlambat untuk memulai."
-3. "Kehidupan adalah petualangan, jangan ragu untuk menjelajahinya."</p>
-  </section>
-  
-  <!-- Pesan Ketiga dengan Animasi Ngetik -->
-  <section>
-  	<!-- Background --><div class="wp"><img id="imgtiga" src="https://feeldreams.github.io/maukahkamu/wptiga.jpg"/></div>
-      <p id="teksnimasi">Jalan saja, nanti juga sampai. Segala hal yang kita lewati adalah sebuah perjalanan, jadi tetaplah berusaha sampai di kilometer selanjutnya</p>
-  </section>
-  
-  <!-- Pesan Keempat dengan Pertanyaan -->
-  <section>
-  	<!-- Background --><div class="wp"><img id="imgempat" src="https://feeldreams.github.io/maukahkamu/wpempat.jpg"/></div>
-      <!-- Stiker --><img class="stiker fade-in" src="https://feeldreams.github.io/bunga.gif"/>
-      
-      <h2 class="title">baca ni</h2>
-      <p class="bold slide-right">ehem kalo ada 5k boleh lah bagi²🗿</p>
-      
-      <div id="Tombol">
-       <a id="By" onClick="fungsipertama()">bwoleh</a>
-       <a id="Bn" onClick="fungsikedua()">tidak</a>
-     </div>
-  </section>
-  
-  <!-- Pesan Akhir, edit di paling bawah di dalam Script -->
-  <section id="iniakhir">
-  	<!-- Background --><div class="wp" id="wpakhir"><img src="https://feeldreams.github.io/maukahkamu/wplima.jpg"/></div>
-      <!-- Stiker --><img id="stikerakhir" class="stiker fade-in" src="https://feeldreams.github.io/g5.gif"/>
-      
-      <img id="stikerakhir2" style="display:none" src="https://feeldreams.github.io/emawh.gif"/>
-      <h1 id="judulakhir"></h1>
-      <p id="kalimatakhir"></p>
-      <p id="palingakhir"></p>
-      <div id="TombolWA">
-        <a onClick="menuju()">Balas </a>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Web | Portofolio</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <nav>
+          <ul>
+          </ul>
+        </nav>
       </div>
-  </section>
-  
-  <div id="initom" class="menu">
-  <a class='tombol' onclick="tes()">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/> </svg>
-  </a>
-  </div>
-
-<script>
-// Teks ketika klik tombol Mau
-function fungsipertama(){
-       fungsi=0;tes();
-       teksjudulakhir = "";
-       tekskalimatakhir = "";
-}
-
-// Teks ketika klik tombol Gamau
-function fungsikedua(){
-       fungsi=0;tes();
-       teksjudulakhir = "";
-       tekskalimatakhir = "";
-}
-
-// Teks Akhir
-teksjudulakhir2 = "semangat";
-tekspalingakhir = "jangan menyerah";
-  
-// Teks yang akan dikirim ke WhatsApp
-pesanwhatsapp = "083191658203";
-
-const body = document.querySelector("body"); initom.style="opacity:0;bottom:0;transition:none"; audio = new Audio('' + linkmp3.src); function berjatuhan() {const heart = document.createElement("div"); heart.className = "fas fa-heart"; heart.style.left = (Math.random() * 90)+"vw"; heart.style.animationDuration = (Math.random()*3)+2+"s"; body.appendChild(heart);} setInterval(function name(params) {var heartArr = document.querySelectorAll(".fa-heart"); if (heartArr.length > 100) {heartArr[0].remove()}},100);
-</script>
-<script src="https://feeldreams.github.io/maukahkamu/main.js"></script>
-</body>
-				   </html>
+      <main class="content">
+        <section class="hero">
+          <img src="online.png" alt="" />
+          <div class="hero-content">
+            <h1>Yanzzxyou</h1>
+            <h3>Profesi</h3>
+            <t>pemilik saluran</t>
+            <h4>Pesan</h4>
+            <t>suport terus saluran ku,biar makin berkembang😘</t>           <br /><br />
+            <a href="" class="action-btn"></a>
+          </div>
+        </section>
+      </main>
+      <div class="footer">
+        <footer>
+          <ul>
+            <li><h4>DONASI:</h4><a href="">https://sociabuzz.com/narutoshipudhen/tribe</a></li>
+            <li><h4>SALURAN WHATSAPP:</h4><a href="">https://whatsapp.com/channel/0029Vai1WDL05MUl6RIZ7W1K</a></li>
+            <li><h4>SALURAN YOUTUBE:</h4><a href="">https://www.youtube.com/@Iyan_54</a></li>            </li>
+          </ul>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
