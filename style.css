@@ -6,7 +6,7 @@ body {
     color: #333;
 }
 
-container {
+.container {
     max-width: 960px;
     margin: 0 auto;
     padding: 20px;
@@ -24,7 +24,7 @@ header .container {
     align-items: center;
 }
 
-logo img {
+.logo img {
     max-height: 50px;
 }
 
@@ -48,13 +48,13 @@ nav a {
     display: flex;
 }
 
-search-box input {
+.search-box input {
     padding: 10px;
     border: none;
     border-radius: 5px 0 0 5px;
 }
 
-search-box button {
+.search-box button {
     padding: 10px;
     border: none;
     border-radius: 0 5px 5px 0;
@@ -111,9 +111,7 @@ main {
     text-decoration: none;
     border-radius: 5px;
 }
-.teks-besar {
-  font-size: 20px;
-}
+
 footer {
     background-color: #333;
     color: #fff;
