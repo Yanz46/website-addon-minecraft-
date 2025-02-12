@@ -7,7 +7,7 @@ body {
 }
 
 container {
-    max-width: 1000px;
+    max-width: 960px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -15,7 +15,7 @@ container {
 header {
     background-color: #333;
     color: #fff;
-    padding: 20px 0;
+    padding: 50px 0;
 }
 
 header .container {
