@@ -111,6 +111,10 @@ main {
     text-decoration: none;
     border-radius: 5px;
 }
+.teks-besar {
+  font-size: 20px;
+}
+
 
 
 footer {
