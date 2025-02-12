@@ -111,6 +111,14 @@ main {
     text-decoration: none;
     border-radius: 5px;
 }
+p {
+  font-size: 18px; /* Mengatur ukuran font paragraf menjadi 18 piksel */
+}
+
+h1 {
+  font-size: 3em; /* Mengatur ukuran font heading 1 menjadi 3 kali ukuran font default */
+}
+
 
 footer {
     background-color: #333;
