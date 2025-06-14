@@ -5,18 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pengubah Link Minecraft</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Pengubah Link Minecraft</h1>
-        <p>Tempel link panjang Minecraft di bawah ini, lalu klik "Ubah Link".</p>
-        <input type="text" id="originalLink" placeholder="Contoh: https://www.minecraft.net/en-us/marketplace/pdp/oreville-studios/actions--stuff-1.4/61c7a786-d7ad-49e0-a710-817121cd9795">
-        <button id="convertButton">Ubah Link</button>
-        <div class="result-box">
-            <label for="convertedLink">Link yang Diubah:</label>
-            <input type="text" id="convertedLink" readonly>
-            <button id="copyButton">Salin Link</button>
-            <p id="errorMessage" class="error-message"></p>
+    </head>
+<body class="minecraft-body" data-background-image="url('path/to/your/minecraft_bg.png')">
+    <div class="container minecraft-frame">
+        <h1 class="minecraft-title">Pengubah Link Minecraft</h1>
+        <p class="minecraft-text">Tempel link panjang Minecraft di bawah ini, lalu klik "Ubah Link".</p>
+        
+        <input type="text" id="originalLink" class="minecraft-input" placeholder="Contoh: https://www.minecraft.net/en-us/marketplace/pdp/..." spellcheck="false">
+        
+        <button id="convertButton" class="minecraft-button minecraft-button-green">Ubah Link</button>
+        
+        <div class="result-box minecraft-frame">
+            <label for="convertedLink" class="minecraft-text">Link yang Diubah:</label>
+            <input type="text" id="convertedLink" class="minecraft-input" readonly spellcheck="false">
+            <button id="copyButton" class="minecraft-button minecraft-button-blue">Salin Link</button>
+            <button id="whatsappShareButton" class="minecraft-button minecraft-button-whatsapp">Kirim ke WhatsApp</button> 
+            <p id="errorMessage" class="error-message minecraft-text"></p>
         </div>
     </div>
 
