@@ -236,3 +236,27 @@ body.minecraft-body::before {
 .minecraft-button-whatsapp:hover {
     background-color: var(--minecraft-whatsapp-dark-green);
 }
+/* ... (CSS yang sudah ada sebelumnya) ... */
+
+:root {
+    /* ... (variabel warna yang sudah ada) ... */
+    --minecraft-orange: #D78A22; /* Warna oranye untuk tombol addon */
+    --minecraft-dark-orange: #B8721A; /* Warna oranye hover */
+}
+
+/* ... (Gaya .minecraft-button dan lainnya yang sudah ada) ... */
+
+.minecraft-button-addon-search {
+    background-color: var(--minecraft-orange);
+    margin-bottom: 25px; /* Beri jarak dengan input di bawahnya */
+    text-decoration: none; /* Hilangkan underline default pada link */
+    display: inline-block; /* Agar bisa diatur padding dan margin seperti button */
+}
+
+.minecraft-button-addon-search:hover {
+    background-color: var(--minecraft-dark-orange);
+    color: var(--minecraft-text-color); /* Pastikan warna teks tetap putih */
+}
+
+/* ... (CSS lainnya) ... */
+
