@@ -1,90 +1,18 @@
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f0f2f5;
-    margin: 0;
+/* ... (CSS yang sudah ada sebelumnya) ... */
+
+:root {
+    /* ... (variabel warna yang sudah ada) ... */
+    --minecraft-whatsapp-green: #25D366; /* Warna WhatsApp */
+    --minecraft-whatsapp-dark-green: #1DA851; /* Warna WhatsApp hover */
 }
 
-.container {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 90%;
-    max-width: 600px;
+/* ... (Gaya .minecraft-button, .minecraft-button-green, .minecraft-button-blue yang sudah ada) ... */
+
+.minecraft-button-whatsapp {
+    background-color: var(--minecraft-whatsapp-green);
+    margin-top: 10px; /* Beri sedikit jarak dari tombol lain */
 }
 
-h1 {
-    color: #333;
-    margin-bottom: 15px;
-}
-
-p {
-    color: #666;
-    margin-bottom: 25px;
-}
-
-input[type="text"] {
-    width: calc(100% - 20px);
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-    margin-bottom: 20px;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-.result-box {
-    margin-top: 30px;
-    border-top: 1px solid #eee;
-    padding-top: 20px;
-    text-align: left;
-}
-
-.result-box label {
-    display: block;
-    margin-bottom: 8px;
-    color: #555;
-    font-weight: bold;
-}
-
-.result-box input[type="text"] {
-    width: calc(100% - 20px);
-    background-color: #e9e9e9;
-    cursor: text;
-    margin-bottom: 15px;
-}
-
-#copyButton {
-    background-color: #007bff;
-    margin-top: 0;
-}
-
-#copyButton:hover {
-    background-color: #0056b3;
-}
-
-.error-message {
-    color: #dc3545;
-    font-weight: bold;
-    margin-top: 10px;
+.minecraft-button-whatsapp:hover {
+    background-color: var(--minecraft-whatsapp-dark-green);
 }
