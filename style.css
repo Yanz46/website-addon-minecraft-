@@ -1,3 +1,223 @@
+/* Import font custom jika diperlukan. Contoh: */
+/* @font-face {
+    font-family: 'Minecraftia';
+    src: url('path/to/your/minecraftia.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+} */
+
+:root {
+    /* Minecraft Palette */
+    --minecraft-green: #5B7F21; /* Rumput */
+    --minecraft-brown: #79553D; /* Tanah */
+    --minecraft-dark-gray: #363636; /* Batu/Shadow */
+    --minecraft-light-gray: #A0A0A0; /* Batu terang */
+    --minecraft-yellow: #FFFF00; /* Aksen */
+    --minecraft-blue: #007bff; /* Button biru */
+    --minecraft-dark-green: #4C6F1D; /* Button hover */
+    --minecraft-dark-blue: #0056b3; /* Button biru hover */
+    --minecraft-text-color: #FFFFFF; /* Teks putih */
+    --minecraft-border-color: #000000; /* Border hitam */
+}
+
+body.minecraft-body {
+    font-family: 'Minecraftia', 'Press Start 2P', 'VT323', monospace; /* Prioritaskan font custom, fallback ke monospace */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px; /* Padding agar tidak terlalu mepet tepi */
+    background-color: #2F2F2F; /* Fallback jika gambar tidak ada */
+    background-image: var(--background-image, none); /* Mengambil dari data-attribute */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Optional: filter blur jika gambar background terlalu ramai */
+    /* filter: blur(2px); */
+    /* -webkit-filter: blur(2px); */
+}
+
+/* Mengambil gambar background dari data attribute */
+body.minecraft-body[data-background-image] {
+    --background-image: var(--minecraft-bg-image, var(--minecraft-bg-default));
+}
+
+body.minecraft-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay gelap agar teks lebih jelas */
+    z-index: -1; /* Di belakang konten */
+}
+
+
+.container.minecraft-frame {
+    background-color: var(--minecraft-dark-gray); /* Warna dasar frame */
+    padding: 30px;
+    border: 4px solid var(--minecraft-border-color); /* Border tebal hitam */
+    border-radius: 0; /* Tanpa radius untuk kesan blok */
+    box-shadow: 
+        8px 8px 0px 0px var(--minecraft-brown), /* Efek shadow ala blok */
+        -2px -2px 0px 0px var(--minecraft-light-gray); /* Highlight atas kiri */
+    text-align: center;
+    width: 90%;
+    max-width: 650px;
+    position: relative; /* Untuk z-index dan positioning */
+    z-index: 1; /* Di atas overlay background */
+}
+
+.minecraft-title {
+    color: var(--minecraft-yellow); /* Warna kuning terang */
+    font-size: 2.5em;
+    margin-bottom: 25px;
+    text-shadow: 
+        3px 3px 0px var(--minecraft-border-color), /* Outline hitam */
+        -1px -1px 0px var(--minecraft-light-gray); /* Highlight */
+    letter-spacing: 2px; /* Memberi jarak antar huruf */
+    line-height: 1.2;
+}
+
+.minecraft-text {
+    color: var(--minecraft-text-color);
+    margin-bottom: 25px;
+    font-size: 1.1em;
+    text-shadow: 1px 1px 0px var(--minecraft-border-color);
+}
+
+.minecraft-input {
+    width: calc(100% - 24px); /* Kurangi padding dan border */
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #1A1A1A; /* Warna input gelap */
+    color: var(--minecraft-text-color);
+    border: 2px solid var(--minecraft-border-color); /* Border tebal */
+    border-radius: 0;
+    box-shadow: 
+        2px 2px 0px 0px var(--minecraft-dark-gray), /* Shadow kecil */
+        -1px -1px 0px 0px var(--minecraft-light-gray); /* Highlight kecil */
+    font-size: 1em;
+    font-family: inherit; /* Mengikuti font body */
+    outline: none; /* Hilangkan outline default */
+}
+
+.minecraft-input:focus {
+    border-color: var(--minecraft-yellow); /* Border kuning saat fokus */
+    box-shadow: 
+        2px 2px 0px 0px var(--minecraft-yellow),
+        -1px -1px 0px 0px var(--minecraft-yellow);
+}
+
+.minecraft-button {
+    background-color: var(--minecraft-green);
+    color: var(--minecraft-text-color);
+    padding: 12px 28px;
+    border: 3px solid var(--minecraft-border-color);
+    border-radius: 0;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-family: inherit;
+    text-shadow: 1px 1px 0px var(--minecraft-border-color);
+    box-shadow: 
+        4px 4px 0px 0px var(--minecraft-brown), /* Efek 3D */
+        -2px -2px 0px 0px var(--minecraft-light-gray); /* Highlight */
+    transition: all 0.1s ease-in-out; /* Transisi saat hover/klik */
+    margin-bottom: 20px;
+    display: inline-block; /* Untuk button copy agar berdampingan */
+}
+
+.minecraft-button:hover {
+    transform: translate(2px, 2px); /* Sedikit bergeser */
+    box-shadow: 
+        2px 2px 0px 0px var(--minecraft-brown),
+        -1px -1px 0px 0px var(--minecraft-light-gray);
+}
+
+.minecraft-button:active {
+    transform: translate(4px, 4px); /* Lebih bergeser saat ditekan */
+    box-shadow: 0px 0px 0px 0px var(--minecraft-brown); /* Shadow hilang */
+}
+
+.minecraft-button-green {
+    background-color: var(--minecraft-green);
+}
+
+.minecraft-button-green:hover {
+    background-color: var(--minecraft-dark-green);
+}
+
+.minecraft-button-blue {
+    background-color: var(--minecraft-blue);
+}
+
+.minecraft-button-blue:hover {
+    background-color: var(--minecraft-dark-blue);
+}
+
+.result-box.minecraft-frame {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 4px solid var(--minecraft-border-color); /* Border di atas */
+    background-color: var(--minecraft-dark-gray); /* Background box hasil */
+    text-align: left;
+    box-shadow: 
+        8px 8px 0px 0px var(--minecraft-brown), /* Efek shadow ala blok */
+        -2px -2px 0px 0px var(--minecraft-light-gray); /* Highlight atas kiri */
+    padding: 20px; /* Padding di dalam box hasil */
+}
+
+.result-box label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--minecraft-text-color);
+    font-weight: bold;
+    text-shadow: 1px 1px 0px var(--minecraft-border-color);
+}
+
+.result-box .minecraft-input {
+    width: calc(100% - 24px); /* Sesuaikan lagi untuk padding/border */
+    background-color: #2A2A2A; /* Lebih gelap dari input utama */
+    cursor: text;
+    margin-bottom: 15px;
+}
+
+#copyButton {
+    /* Spesifik untuk copy button jika perlu penyesuaian */
+    margin-left: 0;
+}
+
+.error-message {
+    color: var(--minecraft-yellow); /* Pesan error kuning */
+    font-weight: bold;
+    margin-top: 15px;
+    text-shadow: 1px 1px 0px var(--minecraft-border-color);
+}
+
+/* Responsif dasar */
+@media (max-width: 768px) {
+    .minecraft-title {
+        font-size: 2em;
+    }
+    .minecraft-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+    .container.minecraft-frame {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .minecraft-title {
+        font-size: 1.8em;
+    }
+    .minecraft-input, .minecraft-button {
+        font-size: 0.9em;
+    }
+}
 /* ... (CSS yang sudah ada sebelumnya) ... */
 
 :root {
