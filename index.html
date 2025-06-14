@@ -1,62 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Website Addon Minecraft</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengubah Link Minecraft</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> </head>
+</head>
 <body>
-    <header>
-        <div class="container">
-            <a href="#" class="logo">
-                <img src="logo.png" alt="Logo">
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="#">Beranda</a></li>
-                    <li><a href="#">Addon</a></li>
-                    <li><a href="#">Tentang Kami</a></li>
-                    <li><a href="#">Kontak</a></li>
-                </ul>
-            </nav>
-            <div class="search-box">
-                <input type="text" placeholder="Cari addon...">
-                <button><i class="fas fa-search"></i></button>
-            </div>
+    <div class="container">
+        <h1>Pengubah Link Minecraft</h1>
+        <p>Tempel link panjang Minecraft di bawah ini, lalu klik "Ubah Link".</p>
+        <input type="text" id="originalLink" placeholder="Contoh: https://www.minecraft.net/en-us/marketplace/pdp/oreville-studios/actions--stuff-1.4/61c7a786-d7ad-49e0-a710-817121cd9795">
+        <button id="convertButton">Ubah Link</button>
+        <div class="result-box">
+            <label for="convertedLink">Link yang Diubah:</label>
+            <input type="text" id="convertedLink" readonly>
+            <button id="copyButton">Salin Link</button>
+            <p id="errorMessage" class="error-message"></p>
         </div>
-    </header>
-     <main>
-        <section id="featured-addons">
-            <div class="container">
-                <h2>Addon Unggulan</h2>
-                <div class="addon-list">
-                    </div>
-            </div>
-        </section>
-         <section id="all-addons">
-            <div class="container">
-                <h2>Semua Addon</h2>
-                <div class="addon-list">
-                    </div>
-            </div>
-        </section>
-    </main>
-    <div class="filter-kategori">
-    <label for="kategori">Kategori:</label>
-    <select id="kategori">
-        <option value="">Semua</option>
-        <option value="blok">Blok</option>
-        <option value="item">Item</option>
-        <option value="mob">Mob</option>
-        <option value="bioma">Bioma</option>
-        </select>
-</div>
- 
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Website Addon Minecraft</p>
-        </div>
-    </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
