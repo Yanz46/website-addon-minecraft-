@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const convertButton = document.getElementById('convertButton');
     const convertedLinkInput = document.getElementById('convertedLink');
     const copyButton = document.getElementById('copyButton');
-    const whatsappShareButton = document.getElementById('whatsappShareButton'); // Ambil tombol baru
+    const whatsappShareButton = document.getElementById('whatsappShareButton');
     const errorMessage = document.getElementById('errorMessage');
 
     // Sembunyikan tombol WhatsApp dan input link terkonversi di awal
@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Tampilkan kembali elemen setelah berhasil diubah
             convertedLinkInput.style.display = 'block';
-            copyButton.style.display = 'inline-block'; // Gunakan inline-block agar tombol berdampingan
-            whatsappShareButton.style.display = 'inline-block'; // Gunakan inline-block
+            copyButton.style.display = 'inline-block';
+            whatsappShareButton.style.display = 'inline-block';
             document.querySelector('.result-box label[for="convertedLink"]').style.display = 'block';
 
         } else {
@@ -63,17 +63,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // Teks pesan yang akan dikirim
             const message = encodeURIComponent("Halo, ini link Minecraft yang sudah diubah:\n" + convertedLink);
             
-            // Link ke grup WhatsApp Anda
-            // Penting: ID grup yang Anda berikan adalah "D4HckJFaZ7Z5est6PXvkBd"
-            // Untuk memastikan link berfungsi, Anda perlu memeriksa apakah ini adalah Group Invite Link ID yang benar.
-            // Biasanya formatnya adalah https://chat.whatsapp.com/INVITE_CODE
-            // Dengan pesan yang sudah diisi: https://wa.me/?text=MESSAGE
-            // Atau untuk grup tertentu: Ini lebih kompleks dan seringkali memerlukan pengguna untuk memiliki grup tersebut di daftar chat mereka
-            // atau menggunakan API WhatsApp Business.
-            // Untuk tujuan sederhana ini, kita akan membuat link yang akan meminta pengguna memilih kontak/grup.
+            // Nomor WhatsApp Anda (pastikan format internasional tanpa + atau 00 di depan)
+            // +62 858-8053-6319 menjadi 6285880536319
+            const phoneNumber = "6285880536319"; // Nomor Anda dari gambar profil
             
-            // Menggunakan wa.me untuk berbagi link dan teks
-            const whatsappUrl = `https://wa.me/?text=${message}`;
+            // Menggunakan wa.me untuk berbagi link dan teks ke nomor tertentu
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
             
             // Membuka jendela WhatsApp
             window.open(whatsappUrl, '_blank');
