@@ -1,57 +1,39 @@
-// Data addon (contoh)
-const addons = [
-    {
-        image: "addon1.jpg",
-        title: "ACTIONS AND STUFF",
-        description: "ACTIONS AND STUFF adalah animasi minecraft keren dan sangat bagus",
-        link: "https://sub4unlock.co/GW7vS23z"
-    },
-    {
-        image: "addon2.jpg",
-        title: "TNT++",
-        description: "TNT++ adalah addon paling bagus menurut saya karena addon ini sangatlah berguna bagi saya yang suka menghancurkan dunia",
-        link: "https://sfl.gl/eDlXx1q"
-    },
-     {
-        image: "addon3.jpg",
-        title: "backblings+ ",
-        description: "  addon ini sangatlah keren ",
-        link: " https://sfl.gl/TGmN "
-    },
-    {
-        image: "addon4.jpg",
-        title: "block blasters ",
-        description: " addon ini bagus  ",
-        link: " https://sfl.gl/QMKiJO6 "
-    },
-    // ... tambahkan data addon lainnya
-];
+document.addEventListener('DOMContentLoaded', () => {
+    const originalLinkInput = document.getElementById('originalLink');
+    const convertButton = document.getElementById('convertButton');
+    const convertedLinkInput = document.getElementById('convertedLink');
+    const copyButton = document.getElementById('copyButton');
+    const errorMessage = document.getElementById('errorMessage');
 
-// Fungsi untuk menampilkan daftar addon
-function displayAddons(addons, containerId) {
-    const container = document.getElementById(containerId);
-    addons.forEach(addon => {
-        const addonItem = document.createElement("div");
-        addonItem.classList.add("addon-item");
-        addonItem.innerHTML = `
-            <img src="${addon.image}" alt="${addon.title}">
-            <h3>${addon.title}</h3>
-            <p>${addon.description}</p>
-            <a href="${addon.link}">Unduh</a>
-        `;
-        container.appendChild(addonItem);
+    convertButton.addEventListener('click', () => {
+        const originalUrl = originalLinkInput.value.trim();
+        errorMessage.textContent = ''; // Clear previous error message
+        convertedLinkInput.value = ''; // Clear previous converted link
+
+        // Regex untuk mengekstrak ID dari URL Minecraft
+        // Pola: '/[a-zA-Z0-9-]+/[a-zA-Z0-9-]+/([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})'
+        // Ini mencari pola `/nama-folder/nama-sub-folder/ID_GUID`
+        const regex = /\/marketplace\/pdp\/[a-zA-Z0-9-]+\/[a-zA-Z0-9-]+\/([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})/i;
+        const match = originalUrl.match(regex);
+
+        if (match && match[1]) {
+            const id = match[1];
+            const baseUrl = "https://www.minecraft.net/en-us/marketplace/pdp?id=";
+            const newUrl = baseUrl + id;
+            convertedLinkInput.value = newUrl;
+        } else {
+            errorMessage.textContent = 'Format link tidak valid. Pastikan link adalah link Minecraft Marketplace yang benar.';
+        }
     });
-}
 
-// Panggil fungsi untuk menampilkan addon saat halaman dimuat
-window.onload = () => {
-    displayAddons(addons, "featured-addons");
-    displayAddons(addons, "all-addons");
-};
-const filterKategori = document.getElementById("kategori");
-
-filterKategori.addEventListener("change", () => {
-    const kategoriTerpilih = filterKategori.value;
-    const addonsTerfilter = kategoriTerpilih === "" ? addons : addons.filter(addon => addon.kategori === kategoriTerpilih);
-    displayAddons(addonsTerfilter, "all-addons");
+    copyButton.addEventListener('click', () => {
+        if (convertedLinkInput.value) {
+            convertedLinkInput.select();
+            convertedLinkInput.setSelectionRange(0, 99999); // For mobile devices
+            document.execCommand('copy');
+            alert('Link berhasil disalin!');
+        } else {
+            errorMessage.textContent = 'Tidak ada link untuk disalin. Ubah link terlebih dahulu.';
+        }
+    });
 });
